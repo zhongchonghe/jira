@@ -1,17 +1,17 @@
-import React, { useEffect } from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React, { useEffect } from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 
-export const Demo = () =>{
-  console.log(123)
- 
-}
+export const Demo = () => {
+  console.log(123);
+  console.log(456);
+};
 root.render(
   <React.StrictMode>
     <App />
