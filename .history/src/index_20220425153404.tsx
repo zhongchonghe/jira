@@ -8,9 +8,8 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
-export const Demo = () =>{
-  console.log(123)
- 
+export const Demo = ()=>{
+  use
 }
 root.render(
   <React.StrictMode>
