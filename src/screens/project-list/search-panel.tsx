@@ -1,4 +1,23 @@
-export const SeachPanel = ({ users, param, setparam }) => {
+
+
+export interface User {
+    id: string,
+    name: string,
+    email: string,
+    title: string,
+    organization: string
+}
+
+interface SeachPanelProps {
+    users: User[],
+    param: {
+        name: string,
+        personId: string
+    },
+    setParam: (param: SeachPanelProps['param']) => void;
+}
+
+export const SeachPanel = ({ users, param, setParam }: SeachPanelProps) => {
     return (
         <form>
             <div>
@@ -6,7 +25,7 @@ export const SeachPanel = ({ users, param, setparam }) => {
                     type='text'
                     value={param.name}
                     onChange={(evt) =>
-                        setparam({
+                        setParam({
                             ...param,
                             name: evt.target.value,
                         })
@@ -15,12 +34,12 @@ export const SeachPanel = ({ users, param, setparam }) => {
                 <select
                     value={param.personId}
                     onChange={(evt) =>
-                        setparam({
+                        setParam({
                             ...param,
                             personId: evt.target.value,
                         })
                     }>
-                    <option value={users.id}>负责人</option>
+                    <option value={param.name}>负责人</option>
                     {users.map((user) => (
                         <option key={user.id} value={user.id}>
                             {user.name}
