@@ -6,7 +6,7 @@ export const isFalsy = (value: any) => value === 0 ? false : !value
  * 清除空值 
  */
 export const cleanObject = (obj: Object) => {
-    const result:any = { ...obj }
+    const result: any = { ...obj }
     Object.keys(result).forEach(key => {
         const value = result[key]
         if (isFalsy(value)) {
@@ -16,13 +16,13 @@ export const cleanObject = (obj: Object) => {
     return result
 
 }
-export const useMount = (callback:()=>void) => {
+export const useMount = (callback: () => void) => {
     useEffect(() => {
         callback()
     }, [])
 }
 
-export const useDebounce = (value:object, delay?:number) => {
+export const useDebounce = < V > (value: V, delay ? : number) => {
     const [debounceValue, setDebounceValue] = useState(value)
     useEffect(() => {
         const timer = setTimeout(() => setDebounceValue(value), delay)
