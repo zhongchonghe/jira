@@ -32,7 +32,7 @@ AuthContext.displayName = "AuthContext";
 export const AuthProvider = ({children}:{children:ReactNode})  =>  {
     const [user, setUser] = useState<User | null>(null)
 
-    const login = (form: AuthForm) => auth.login(form).then(setUser)
+    const login = (form: AuthForm) => auth .login(form).then(setUser)
     const register = (form: AuthForm) => auth.register(form).then(setUser)
     const logout = () => auth.logout().then(() => setUser(null))
 
