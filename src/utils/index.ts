@@ -2,14 +2,16 @@ import React, { useEffect, useState } from 'react'
 
 export const isFalsy = (value: any) => value === 0 ? false : !value
 
+export const isVoid = (value: any) => value === undefined || value === null || value === ''
+
 /**
  * 清除空值 
  */
-export const cleanObject = (obj: Object) => {
+export const cleanObject = (obj: {[key:string]:unknown}) => {
     const result: any = { ...obj }
     Object.keys(result).forEach(key => {
         const value = result[key]
-        if (isFalsy(value)) {
+        if (isVoid(value)) {
             delete result[key]
         }
     });
