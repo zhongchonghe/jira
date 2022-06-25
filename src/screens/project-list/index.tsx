@@ -1,7 +1,7 @@
 import { List } from "./list";
 import { SeachPanel } from "./search-panel";
 import * as qs from "qs";
-import { cleanObject, useMount, useDebounce } from "utils/index";
+import { cleanObject, useMount, useDebounce, useDocumentTitle } from "utils/index";
 import React, { useEffect, useState } from "react";
 import { useHttp } from "utils/http";
 import styled from "@emotion/styled";
@@ -33,6 +33,7 @@ export const ProjectListScreen = () => {
         //     }
         // });
     });
+    useDocumentTitle("项目列表",false)
 
     return (
         <Container>
